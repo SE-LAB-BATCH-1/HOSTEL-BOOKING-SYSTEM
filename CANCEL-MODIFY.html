@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial
+scale=1.0"> 
+    <title>User Profile</title> 
+ <style> 
+     .profile-section { 
+    text-align: center; 
+    padding: 50px; 
+} 
+ 
+.profile-section h2, .profile-section h3 { 
+    margin-bottom: 30px; 
+    font-size: 28px; 
+} 
+ 
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    max-width: 400px; 
+    margin: 0 auto 50px; 
+} 
+ 
+input[type="text"], input[type="tel"], input[type="email"], 
+input[type="date"] { 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+} 
+ 
+button { 
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+} 
+ 
+.booking-list { 
+    max-width: 600px; 
+    margin: 0 auto; 
+} 
+ 
+.booking-item { 
+    background-color: white; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+} 
+ 
+.cancel { 
+    background-color: #ff4d4d; 
+} 
+  
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <nav> 
+            <h1>Hostel Booking Website</h1> 
+        </nav> 
+    </header> 
+     
+    <section class="profile-section"> 
+        <h2>Your Profile</h2> 
+        <form action="/update-profile" method="POST"> 
+            <label for="name">Name:</label> 
+            <input type="text" id="name" placeholder="Enter your name" 
+required> 
+ 
+            <label for="phone">Phone:</label> 
+            <input type="tel" id="phone" placeholder="Enter your phone 
+number" required> 
+ 
+            <label for="email">Email:</label> 
+            <input type="email" id="email" placeholder="Enter your 
+email" required> 
+ 
+            <label for="dob">Date of Birth:</label> 
+            <input type="date" id="dob" required> 
+ 
+            <button type="submit">Save Changes</button> 
+        </form> 
+ 
+        <h3>Your Bookings</h3> 
+        <div class="booking-list"> 
+            <!-- Example Booking Item --> 
+            <div class="booking-item"> 
+                <p><strong>Hostel Name:</strong>Mandadam</p> 
+                <p><strong>Check-in:</strong> 12th Dec 2024</p> 
+                <p><strong>Check-out:</strong> 15th Dec 2024</p> 
+                <p><strong>Status:</strong> Confirmed</p> 
+                <button>Modify</button> 
+                <button class="cancel">Cancel</button> 
+            </div> 
+            <!-- Repeat for more bookings --> 
+        </div> 
+    </section> 
+ 
+</body> 
+</html>

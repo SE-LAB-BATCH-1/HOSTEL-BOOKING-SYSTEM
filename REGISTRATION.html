@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial
+scale=1.0"> 
+    <title>Registration</title> 
+ <style> 
+      .registration-section { 
+    text-align: center; 
+    padding: 50px; 
+} 
+ 
+.registration-section h2 { 
+    margin-bottom: 30px; 
+    font-size: 28px; 
+} 
+ 
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    max-width: 400px; 
+    margin: 0 auto 50px; 
+} 
+ 
+input[type="text"], input[type="email"], input[type="tel"], 
+input[type="date"], textarea, input[type="password"] { 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+} 
+ 
+textarea { 
+    resize: none; 
+    height: 100px;  
+} 
+ 
+button { 
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+} 
+ 
+.cancel { 
+    background-color: #ff4d4d; 
+} 
+ 
+    </style></head> 
+<body> 
+    <header> 
+        <nav> 
+            <h1>Hostel Booking Website</h1> 
+        </nav> 
+    </header> 
+     
+    <section class="registration-section"> 
+        <h2>Create an Account</h2> 
+        <form action="/register" method="POST"> 
+            <label for="first-name">First Name:</label> 
+            <input type="text" id="first-name" placeholder="Enter your 
+first name" required> 
+ 
+            <label for="last-name">Last Name:</label> 
+            <input type="text" id="last-name" placeholder="Enter your 
+last name" required> 
+ 
+            <label for="email">Email:</label> 
+            <input type="email" id="email" placeholder="Enter your 
+email" required> 
+ 
+            <label for="phone">Phone Number:</label> 
+            <input type="tel" id="phone" placeholder="Enter your phone 
+number" required> 
+ 
+            <label for="dob">Date of Birth:</label> 
+            <input type="date" id="dob" required> 
+ 
+            <label for="address">Address:</label> 
+            <textarea id="address" placeholder="Enter your address" 
+required></textarea> 
+ 
+            <label for="password">Password:</label> 
+            <input type="password" id="password" placeholder="Enter 
+your password" required> 
+ 
+            <label for="confirm-password">Confirm Password:</label> 
+            <input type="password" id="confirm-password" 
+placeholder="Confirm your password" required> 
+ 
+            <button type="submit">Register</button> 
+            <button type="button" class="cancel" 
+onclick="window.location.href='index.html';">Cancel</button> 
+        </form> 
+    </section> 
+ 
+</body> 
+</html>

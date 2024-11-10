@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial
+scale=1.0"> 
+    <title>Hostel Booking Feedback Form</title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        } 
+ 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f0f0f0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        } 
+ 
+        .form-container { 
+            background-color: #fff; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            width: 350px; 
+        } 
+ 
+        h2 { 
+            text-align: center; 
+            margin-bottom: 20px; 
+        } 
+ 
+        .form-group { 
+            margin-bottom: 15px; 
+        } 
+ 
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+        } 
+ 
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            font-size: 14px; 
+        } 
+ 
+        .form-group textarea { 
+            resize: vertical; 
+        } 
+ 
+        button { 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #007BFF; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+        } 
+ 
+        button:hover { 
+            background-color: #0056b3; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="form-container"> 
+        <form> 
+            <h2>Hostel Booking Feedback</h2> 
+ 
+            <!-- Name Field --> 
+            <div class="form-group"> 
+                <label for="name">Full Name:</label> 
+                <input type="text" id="name" name="name" 
+placeholder="Enter your full name" required> 
+            </div> 
+ 
+            <!-- Email Field --> 
+            <div class="form-group"> 
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email" 
+placeholder="Enter your email" required> 
+            </div> 
+ 
+            <!-- Phone Field --> 
+            <div class="form-group"> 
+                <label for="phone">Phone:</label> 
+                <input type="tel" id="phone" name="phone" 
+placeholder="Enter your phone number"> 
+            </div> 
+ 
+            <!-- Booking Date Field --> 
+            <div class="form-group"> 
+                <label for="bookingDate">Date of Booking:</label> 
+                <input type="date" id="bookingDate" name="bookingDate" 
+required> 
+            </div> 
+ 
+            <!-- Room Number Field --> 
+            <div class="form-group"> 
+                <label for="roomNumber">Room Number:</label> 
+                <input type="text" id="roomNumber" 
+name="roomNumber" placeholder="Enter your room number" 
+required> 
+            </div> 
+ 
+            <!-- Feedback Field --> 
+            <div class="form-group"> 
+                <label for="feedback">Feedback:</label> 
+                <textarea id="feedback" name="feedback" rows="4" 
+placeholder="Enter your feedback" required></textarea> 
+            </div> 
+ 
+            <!-- Rating Field --> 
+            <div class="form-group"> 
+                <label for="rating">Rate your stay:</label> 
+                <select id="rating" name="rating" required> 
+                    <option value="" disabled selected>Select your 
+rating</option> 
+                    <option value="5">Excellent</option> 
+                    <option value="4">Very Good</option> 
+                    <option value="3">Good</option> 
+                    <option value="2">Fair</option> 
+                    <option value="1">Poor</option> 
+                </select> 
+            </div> 
+ 
+            <!-- Submit Button --> 
+            <div class="form-group"> 
+                <button type="submit">Submit Feedback</button> 
+            </div> 
+        </form> 
+    </div> 
+</body> 
+</html>

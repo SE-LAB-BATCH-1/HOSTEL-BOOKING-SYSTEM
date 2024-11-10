@@ -1,0 +1,153 @@
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial
+scale=1.0"> 
+    <title>Login - Hostel Booking System</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f7f7f7; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        } 
+ 
+        .login-container { 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            width: 300px; 
+            text-align: center; 
+        } 
+ 
+        h2 { 
+            margin-bottom: 20px; 
+            color: #333; 
+        } 
+ 
+        input[type="text"], input[type="password"] { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            box-sizing: border-box; 
+        } 
+ 
+        .login-btn { 
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 5px; 
+            width: 100%; 
+            cursor: pointer; 
+            margin-top: 10px; 
+        } 
+ 
+        .login-btn:hover { 
+            background-color: #0056b3; 
+        } 
+ 
+        .forgot-password { 
+            margin-top: 10px; 
+            font-size: 0.9em; 
+        } 
+ 
+        .forgot-password a { 
+            color: #007bff; 
+            text-decoration: none; 
+        } 
+ 
+        .forgot-password a:hover { 
+            text-decoration: underline; 
+        } 
+ 
+        .captcha { 
+            margin-top: 15px; 
+        } 
+ 
+        .captcha label { 
+            font-weight: bold; 
+            margin-right: 10px; 
+        } 
+ 
+        .captcha input[type="text"] { 
+            width: calc(100% - 100px); 
+        } 
+ 
+        .captcha span { 
+            font-weight: bold; 
+        } 
+ 
+        .error { 
+            color: red; 
+            margin-top: 10px; 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+    <div class="login-container"> 
+        <h2>Login</h2> 
+        <form id="loginForm" action="dashboard.html" 
+method="POST" onsubmit="return validateCaptcha()"> 
+            <input type="text" id="username" placeholder="Enter your 
+username" required> 
+            <input type="password" id="password" placeholder="Enter 
+your password" required> 
+             
+            <!-- CAPTCHA Section --> 
+            <div class="captcha"> 
+                <label>Solve: </label> 
+                <span id="num1"></span> + <span id="num2"></span> = 
+                <input type="text" id="captchaInput" 
+placeholder="Answer" required> 
+            </div> 
+             
+            <button type="submit" class="login-btn">Login</button> 
+        </form> 
+        <div class="forgot-password"> 
+            <a href="#">Forgot password?</a> 
+        </div> 
+        <div class="error" id="captchaError"></div> 
+    </div> 
+ 
+    <script> 
+        let num1, num2; 
+ 
+        // Function to generate a new CAPTCHA 
+        function generateCaptcha() { 
+            num1 = Math.floor(Math.random() * 10); 
+            num2 = Math.floor(Math.random() * 10); 
+            document.getElementById('num1').innerText = num1; 
+            document.getElementById('num2').innerText = num2; 
+        } 
+ 
+        // Validate the CAPTCHA answer 
+        function validateCaptcha() { 
+            const answer = 
+parseInt(document.getElementById('captchaInput').value); 
+            const captchaError = 
+document.getElementById('captchaError'); 
+            if (answer === (num1 + num2)) { 
+                captchaError.innerText = ''; 
+                return true; // Allow form submission 
+            } else { 
+                captchaError.innerText = 'Incorrect CAPTCHA, please try 
+again.'; 
+                generateCaptcha(); // Generate a new CAPTCHA on error 
+                return false; // Prevent form submission 
+            } 
+        } 
+ 
+        // Generate a CAPTCHA when the page loads 
+        window.onload = generateCaptcha; 
+    </script> 
+ 
+</body> 
+</html>

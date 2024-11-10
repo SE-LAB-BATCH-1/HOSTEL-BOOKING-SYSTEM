@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial
+scale=1.0"> 
+    <title>Booking - Hostel Booking System</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f7f7f7; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        } 
+ 
+        .booking-container { 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            width: 350px; 
+            text-align: center; 
+        } 
+ 
+        h2 { 
+            margin-bottom: 20px; 
+            color: #333; 
+        } 
+ 
+        input[type="date"], select { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            box-sizing: border-box; 
+        } 
+ 
+        .booking-btn { 
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 5px; 
+            width: 100%; 
+            cursor: pointer; 
+            margin-top: 10px; 
+        } 
+ 
+        .booking-btn:hover { 
+            background-color: #0056b3; 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+    <div class="booking-container"> 
+        <h2>Book Your Stay</h2> 
+        <form action="confirm_booking.html" method="POST"> 
+            <label for="checkin">Check-In Date:</label> 
+            <input type="date" id="checkin" name="checkin" required> 
+ 
+            <label for="checkout">Check-Out Date:</label> 
+            <input type="date" id="checkout" name="checkout" required> 
+ 
+            <label for="roomType">Room Type:</label> 
+            <select id="roomType" name="roomType" required> 
+                <option value="" disabled selected>Select Room 
+Type</option> 
+                <option value="single">Single Room</option> 
+                <option value="double">Double Room</option> 
+                <option value="dormitory">Dormitory</option> 
+            </select> 
+ 
+            <button type="submit" class="booking-btn">Book 
+Now</button> 
+        </form> 
+    </div> 
+ 
+</body> 
+</html>
